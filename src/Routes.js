@@ -1,20 +1,27 @@
-import React from 'react';
-// import { Route } from 'react-router-dom';
-import Home from './containers/Home';
-import Login from './containers/Login';
+import loadable from "@loadable/component";
 
 export default [
   {
-    key:"Home",
+    key:"app",
     path: "/",
-    exact: true,
-    component: Home,
-    loadData: Home.loadData
-  },{
-    key:"Login",
-    path: "/login",
-    exact: true,
-    component: Login,
+    component: loadable(() => import("./App")),
+    routes:[
+      {
+        key:"Home",
+        path: "/",
+        exact: true,
+        component: loadable(() => import("./containers/Home")),
+        loadData: loadable(() => import("./containers/Home")).loadData
+      },{
+        key:"Login",
+        path: "/login",
+        exact: true,
+        component: loadable(() => import("./containers/Login")),
+      },{
+        path: "*",
+        component: loadable(() => import("./containers/NotFound")),
+      }
+    ]
   }
 ]
 

@@ -9,7 +9,8 @@ module.exports = {
           targets: {
             browsers: ['last 2 versions']
           }
-        }]]
+        }]],
+        plugins: ["@loadable/babel-plugin"]
       }
     }]
   }

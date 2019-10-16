@@ -5,7 +5,6 @@ export default class Login extends Component{
   render() {
     return (
       <div>
-        <Header/>
         Login pagesss
         <button onClick={()=>{alert('qq')}}>click</button>
       </div>

@@ -1,5 +1,6 @@
 const path = require("path");
 const merge = require('webpack-merge');
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const baseConfig = require('./webpack.base.js')
 
 
@@ -9,5 +10,33 @@ module.exports = merge(baseConfig,{
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'public')
-  }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",  // chunk选择范围
+      cacheGroups: {
+        vendor: {
+          test: function(module) {
+            // 阻止.css文件资源打包到vendor chunk中
+            if(module.resource && /\.css$/.test(module.resource)) {
+              return false;
+            }
+            // node_modules目录下的模块打包到vendor chunk中
+            return module.context && module.context.includes("node_modules");
+          }
+        }
+      }
+    },
+    // webpack引导模块
+    runtimeChunk: {
+      name: "manifest"
+    }
+  },
+  plugins: [ 
+    new LoadablePlugin({
+      filename: "client-manifest.json",
+    })
+  ]
 })
+
+

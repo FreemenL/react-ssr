@@ -33,7 +33,14 @@ app.get("*",(req,res)=>{
   })
   
   Promise.all(promises).then(() => {
-    res.send(render(store,req))
+    const context = {}
+    const html = render(store, Routes, req, context);
+    if(context.NotFound){
+      res.status(404);
+      res.send(html);
+    }else{
+      res.send(html);
+    }
   })
 
 })
