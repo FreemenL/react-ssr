@@ -11,7 +11,7 @@ export default [
         path: "/",
         exact: true,
         component: loadable(() => import("./containers/Home")),
-        loadData: loadable(() => import("./containers/Home")).loadData
+        loadData: require("./containers/Home").default.loadData
       },{
         key:"Login",
         path: "/login",

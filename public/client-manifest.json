@@ -1,13 +1,12 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.41.1",
-  "hash": "0e4c2bb0982817e3ca98",
+  "version": "4.41.2",
+  "hash": "78b4de3bb69c9f47ba76",
   "publicPath": "",
   "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/public",
   "assetsByChunkName": {
     "App": "App.index.js",
-    "containers-Home": "containers-Home.index.js",
     "containers-Login": "containers-Login.index.js",
     "containers-NotFound": "containers-NotFound.index.js",
     "main": "main.index.js",
@@ -23,18 +22,6 @@
       ],
       "chunkNames": [
         "App"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "containers-Home.index.js",
-      "size": 11033,
-      "chunks": [
-        "containers-Home"
-      ],
-      "chunkNames": [
-        "containers-Home"
       ],
       "info": {},
       "emitted": false
@@ -77,7 +64,7 @@
     },
     {
       "name": "main.index.js",
-      "size": 16893,
+      "size": 22567,
       "chunks": [
         "main"
       ],
@@ -143,12 +130,8 @@
       "childAssets": {}
     },
     "containers-Home": {
-      "chunks": [
-        "containers-Home"
-      ],
-      "assets": [
-        "containers-Home.index.js"
-      ],
+      "chunks": [],
+      "assets": [],
       "children": {},
       "childAssets": {}
     },

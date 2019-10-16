@@ -7,7 +7,7 @@ module.exports = merge(baseConfig,{
   target: "node",
   mode: "development",
   entry: './src/server/index.js',
-  externals: [nodeExternals()],
+  externals: [ nodeExternals() ],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
