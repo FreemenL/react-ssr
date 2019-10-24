@@ -1,15 +1,30 @@
-const path = require("path");
-const merge = require('webpack-merge');
-const LoadablePlugin = require('@loadable/webpack-plugin')
-const baseConfig = require('./webpack.base.js')
-
+export const path = require("path");
+export const merge = require('webpack-merge');
+export const LoadablePlugin = require('@loadable/webpack-plugin')
+export const baseConfig = require('./webpack.base.js')
+export const srcPath = path.resolve(__dirname,'./src')
 
 module.exports = merge(baseConfig,{
   mode:"development",
   entry:"./src/client/index.js",
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'public')
+    filename: 'static/js/[name].js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
+  },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: ['style-loader',{
+        loader:"css-loader",
+        options: {
+          modules: true,
+          importLoaders: 1,
+          localIdentName: '[path][name]__[local]--[hash:base64:5]'
+        }
+      }],
+      exclude: /node_modules/,
+    }]
   },
   optimization: {
     splitChunks: {
@@ -30,6 +45,12 @@ module.exports = merge(baseConfig,{
     // webpack引导模块
     runtimeChunk: {
       name: "manifest"
+    }
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      '@src': srcPath
     }
   },
   plugins: [ 

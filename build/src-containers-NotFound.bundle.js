@@ -1,4 +1,4 @@
-exports.ids = ["containers-NotFound"];
+exports.ids = ["src-containers-NotFound"];
 exports.modules = {
 
 /***/ "./src/containers/NotFound/index.js":

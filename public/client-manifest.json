@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.2",
-  "hash": "78b4de3bb69c9f47ba76",
+  "hash": "e2f17ea3aad69e9de7fe",
   "publicPath": "",
   "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/public",
   "assetsByChunkName": {
@@ -16,7 +16,7 @@
   "assets": [
     {
       "name": "App.index.js",
-      "size": 5640,
+      "size": 8302,
       "chunks": [
         "App"
       ],
@@ -28,7 +28,7 @@
     },
     {
       "name": "containers-Login.index.js",
-      "size": 8124,
+      "size": 10744,
       "chunks": [
         "containers-Login"
       ],
@@ -64,7 +64,7 @@
     },
     {
       "name": "main.index.js",
-      "size": 22567,
+      "size": 29951,
       "chunks": [
         "main"
       ],
@@ -76,7 +76,7 @@
     },
     {
       "name": "vendor~main.index.js",
-      "size": 1496344,
+      "size": 1558996,
       "chunks": [
         "vendor~main"
       ],

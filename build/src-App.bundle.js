@@ -1,4 +1,4 @@
-exports.ids = ["App"];
+exports.ids = ["src-App"];
 exports.modules = {
 
 /***/ "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js?!./src/components/styles.css":
