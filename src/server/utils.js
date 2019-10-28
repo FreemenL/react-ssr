@@ -11,9 +11,10 @@ import { resolve } from 'path';
 export const render = (store,routes,req,context)=>{
 
   const statsFile = resolve("./public/client-manifest.json");
-  const extractor = new ChunkExtractor({ statsFile });
-
-    const content = renderToString(extractor.collectChunks(
+  const extractor = new ChunkExtractor({ 
+    statsFile
+   });
+  const content = renderToString(extractor.collectChunks(
       <Provider store={store}>
         <StaticRouter location={req.path} context={context}>
           <div>

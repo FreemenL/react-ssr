@@ -1,18 +1,19 @@
-const path = require("path");
-const baseConfig = require('./webpack.base.js')
-const nodeExternals = require('webpack-node-externals');
-const merge = require('webpack-merge');
-const srcPath = path.resolve(__dirname,'./src')
+export const path = require("path");
+export const baseConfig = require('./webpack.base.ts')
+export const LoadablePlugin = require('@loadable/webpack-plugin')
+export const nodeExternals = require('webpack-node-externals');
+export const merge = require('webpack-merge');
 
-module.exports = merge(baseConfig,{
+module.exports = merge(baseConfig, {
   target: "node",
   mode: "development",
   entry: './src/server/index.js',
+  externals: [nodeExternals()],
   module: {
     rules: [{
       test: /\.css$/,
       use: ['isomorphic-style-loader',{
-        loader:"css-loader",
+        loader: "css-loader",
         options: {
           modules: true,
           importLoaders: 1,
@@ -22,16 +23,9 @@ module.exports = merge(baseConfig,{
       exclude: /node_modules/,
     }]
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-    alias: {
-      '@src': srcPath
-    }
-  },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
-    libraryTarget: "commonjs2"
+    path: path.resolve(__dirname, 'build')
   }
 })
 

@@ -1,12 +1,11 @@
 export const path = require("path");
 export const merge = require('webpack-merge');
 export const LoadablePlugin = require('@loadable/webpack-plugin')
-export const baseConfig = require('./webpack.base.js')
-export const srcPath = path.resolve(__dirname,'./src')
+export const baseConfig = require('./webpack.base.ts')
 
 module.exports = merge(baseConfig,{
-  mode:"development",
-  entry:"./src/client/index.js",
+  mode: "development",
+  entry:  "./src/client/index",
   output: {
     filename: 'static/js/[name].js',
     path: path.resolve(__dirname, 'public'),
@@ -16,7 +15,7 @@ module.exports = merge(baseConfig,{
     rules: [{
       test: /\.css$/,
       use: ['style-loader',{
-        loader:"css-loader",
+        loader: "css-loader",
         options: {
           modules: true,
           importLoaders: 1,
@@ -47,17 +46,9 @@ module.exports = merge(baseConfig,{
       name: "manifest"
     }
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-    alias: {
-      '@src': srcPath
-    }
-  },
   plugins: [ 
     new LoadablePlugin({
       filename: "client-manifest.json",
     })
   ]
 })
-
-

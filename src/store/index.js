@@ -2,7 +2,7 @@ import { createStore , applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { reducer as homeReducer }  from '../containers/Home/store';
 import serverAxios from '../server/serverAxios';
-import clientAxios from '../client/serverAxios';
+import clientAxios from '../client/clientAxios';
 
 
 const reducer = combineReducers({
