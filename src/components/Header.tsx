@@ -4,7 +4,7 @@ import  WithStyle from '../WithStyle';
 import styles from './styles.css';
 
 interface Props{
-  staticContext:any
+  staticContext: any
 }
 
 export default WithStyle(class Header extends Component<Props, any>{

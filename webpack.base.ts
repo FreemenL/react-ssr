@@ -1,5 +1,7 @@
 export const path = require("path");
 export const fs = require("fs");
+export const LoadablePlugin = require('@loadable/webpack-plugin')
+
 const srcPath = path.resolve(__dirname,'./src')
 
 module.exports = {
@@ -31,9 +33,18 @@ module.exports = {
           configFileName: path.resolve(fs.realpathSync(process.cwd()),'tsconfig.json')
       }}]
       },{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
     }]
-  }
+  },
+
+  plugins: [ 
+    new LoadablePlugin({
+      filename: `${process.env.PLATFORM}-manifest.json`,
+    })
+  ]
 }
+
+
+

@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx npm-run-all --parallel dev:**",
-    "build:node": "ts-node -P config/tsconfig-for-webpack-config.json",
-    "dev:start": "npx nodemon --watch build --exec node \"./build/bundle.js\"",
-    "dev:build:server": "ts-node -P config/tsconfig-for-webpack-config.json scripts/build-server.ts",
-    "dev:build:client": "ts-node -P config/tsconfig-for-webpack-config.json scripts/build-client.ts"
+    "start": "npm run build:server && npm run server",
+    "server": "npx nodemon --watch build --exec node \"./build/bundle.js\"",
+    "build:server": "ts-node -P config/tsconfig-for-webpack-config.json scripts/build-server.ts",
+    "prestart": "ts-node -P config/tsconfig-for-webpack-config.json scripts/build-client.ts"
   },
   "author": "",
   "license": "ISC",

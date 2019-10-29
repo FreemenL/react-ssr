@@ -1,0 +1,167 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.41.2",
+  "hash": "161c163864e87d76ee3b",
+  "publicPath": "/",
+  "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/public",
+  "assetsByChunkName": {
+    "App": "static/js/App.js",
+    "Login": "static/js/Login.js",
+    "NotFound": "static/js/NotFound.js",
+    "main": "static/js/main.js",
+    "manifest": "static/js/manifest.js",
+    "vendor~main": "static/js/vendor~main.js"
+  },
+  "assets": [
+    {
+      "name": "static/js/App.js",
+      "size": 6062,
+      "chunks": [
+        "App"
+      ],
+      "chunkNames": [
+        "App"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "static/js/Login.js",
+      "size": 2222,
+      "chunks": [
+        "Login"
+      ],
+      "chunkNames": [
+        "Login"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "static/js/NotFound.js",
+      "size": 2231,
+      "chunks": [
+        "NotFound"
+      ],
+      "chunkNames": [
+        "NotFound"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "static/js/main.js",
+      "size": 22807,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "static/js/manifest.js",
+      "size": 9235,
+      "chunks": [
+        "manifest"
+      ],
+      "chunkNames": [
+        "manifest"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "static/js/vendor~main.js",
+      "size": 1567148,
+      "chunks": [
+        "vendor~main"
+      ],
+      "chunkNames": [
+        "vendor~main"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "manifest",
+        "vendor~main",
+        "main"
+      ],
+      "assets": [
+        "static/js/manifest.js",
+        "static/js/vendor~main.js",
+        "static/js/main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "manifest",
+        "vendor~main",
+        "main"
+      ],
+      "assets": [
+        "static/js/manifest.js",
+        "static/js/vendor~main.js",
+        "static/js/main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "App": {
+      "chunks": [
+        "App"
+      ],
+      "assets": [
+        "static/js/App.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "Home": {
+      "chunks": [],
+      "assets": [],
+      "children": {},
+      "childAssets": {}
+    },
+    "Login": {
+      "chunks": [
+        "Login"
+      ],
+      "assets": [
+        "static/js/Login.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "NotFound": {
+      "chunks": [
+        "NotFound"
+      ],
+      "assets": [
+        "static/js/NotFound.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

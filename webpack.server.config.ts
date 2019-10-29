@@ -7,7 +7,7 @@ export const merge = require('webpack-merge');
 module.exports = merge(baseConfig, {
   target: "node",
   mode: "development",
-  entry: './src/server/index.js',
+  entry: './src/server/index.ts',
   externals: [nodeExternals()],
   module: {
     rules: [{
@@ -25,7 +25,8 @@ module.exports = merge(baseConfig, {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
+    libraryTarget: 'commonjs2'
   }
 })
 

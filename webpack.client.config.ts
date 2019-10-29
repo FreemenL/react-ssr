@@ -45,10 +45,5 @@ module.exports = merge(baseConfig,{
     runtimeChunk: {
       name: "manifest"
     }
-  },
-  plugins: [ 
-    new LoadablePlugin({
-      filename: "client-manifest.json",
-    })
-  ]
+  }
 })
