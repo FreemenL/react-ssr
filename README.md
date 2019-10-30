@@ -54,6 +54,7 @@ loadableReady(() => {
 
 * 抽离配置
 * hot-load
+* 接入 eslint sentry 
 * 引入 antd
 * 接入后台服务
 
