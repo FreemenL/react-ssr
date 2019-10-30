@@ -7,13 +7,13 @@ module.exports = merge(baseConfig,{
   mode: "development",
   entry:  "./src/client/index",
   output: {
-    filename: 'static/js/[name].js',
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/',
+    filename: 'static/js/[name]_[contenthash:8].js',
+    path: path.resolve(__dirname, 'dist/web'),
+    publicPath: '/web/',
   },
   module: {
     rules: [{
-      test: /\.css$/,
+      test: /\.(le|c)ss$/,
       use: ['style-loader',{
         loader: "css-loader",
         options: {
@@ -21,7 +21,7 @@ module.exports = merge(baseConfig,{
           importLoaders: 1,
           localIdentName: '[path][name]__[local]--[hash:base64:5]'
         }
-      }],
+      }, 'less-loader'],
       exclude: /node_modules/,
     }]
   },

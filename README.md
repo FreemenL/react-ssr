@@ -46,3 +46,15 @@ loadableReady(() => {
 ### 注意事项
 
 * 服务器端不能使用 style-loader  因为他会使用window对象进行一些操作
+
+# react 服务服务器端渲染 ssr 
+
+
+#### TODO
+
+* 抽离配置
+* hot-load
+* 引入 antd
+* 接入后台服务
+
+

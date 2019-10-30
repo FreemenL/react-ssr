@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import  WithStyle from '../WithStyle';
-import styles from './styles.css';
+import styles from './styles.less';
 
-interface Props{
-  staticContext: any
-}
-
-export default WithStyle(class Header extends Component<Props, any>{
+export default WithStyle(class Header extends PureComponent{
   render() {
     return (
       <div className={styles.test}>

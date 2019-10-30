@@ -1,5 +1,7 @@
 export const path = require("path");
 export const fs = require("fs");
+const webpack = require("webpack");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 export const LoadablePlugin = require('@loadable/webpack-plugin')
 
 const srcPath = path.resolve(__dirname,'./src')
@@ -40,10 +42,12 @@ module.exports = {
   },
 
   plugins: [ 
+    new webpack.ProgressPlugin(),
     new LoadablePlugin({
       filename: `${process.env.PLATFORM}-manifest.json`,
     })
   ]
+
 }
 
 

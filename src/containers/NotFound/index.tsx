@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class NotFound extends Component <any, any>{
+interface NotFoundProps{
+  staticContext: {
+    NotFound?: Boolean
+  }
+}
+
+export default class NotFound extends PureComponent<NotFoundProps, any>{
   
   constructor(props){
     super(props);

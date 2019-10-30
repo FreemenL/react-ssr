@@ -1,11 +1,16 @@
-import React ,{ Component , Fragment }from 'react'
+import React ,{ PureComponent , Fragment }from 'react'
 import { Helmet } from "react-helmet";
 import { connect } from 'react-redux';
 import { getHomeList } from './store/actions';
 import  WithStyle from '../../WithStyle';
 import styles from './style.css';
 
-class Home extends Component<any, any> {
+interface Props {
+  list: Array<any>,
+  getHomeList: Function
+}
+
+class Home extends PureComponent<Props, any> {
 
   renderItem(){
     return (item)=>(<div key={item.id}>{item.title}</div>)

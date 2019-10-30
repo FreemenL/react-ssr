@@ -10,7 +10,7 @@ import { resolve } from 'path';
 
 export const render = (store,routes,req,context)=>{
 
-  const statsFile = resolve("./public/client-manifest.json");
+  const statsFile = resolve("./dist/web/client-manifest.json");
   const extractor = new ChunkExtractor({ 
     statsFile
    });

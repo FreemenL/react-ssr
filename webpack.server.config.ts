@@ -11,7 +11,7 @@ module.exports = merge(baseConfig, {
   externals: [nodeExternals()],
   module: {
     rules: [{
-      test: /\.css$/,
+      test: /\.(le|c)ss$/,
       use: ['isomorphic-style-loader',{
         loader: "css-loader",
         options: {
@@ -19,13 +19,14 @@ module.exports = merge(baseConfig, {
           importLoaders: 1,
           localIdentName: '[path][name]__[local]--[hash:base64:5]'
         }
-      }],
+      },'less-loader'],
       exclude: /node_modules/,
     }]
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    filename: 'server.js',
+    chunkFilename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist/node'),
     libraryTarget: 'commonjs2'
   }
 })

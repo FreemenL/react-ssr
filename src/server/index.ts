@@ -6,7 +6,7 @@ import Routes from '../Routes';
 import { matchRoutes } from "react-router-config";
 
 const app = express();
-app.use(express.static('public'));
+app.use(express.static('dist'));
 
 app.use('/api', proxy('http://localhost:4000', {
   proxyReqPathResolver: function(req) {
@@ -44,7 +44,6 @@ app.get("*", (req,res)=>{
       res.send(html);
     }
   })
-
 })
 
 app.listen(3000,()=>{

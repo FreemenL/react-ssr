@@ -1,0 +1,139 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.41.2",
+  "hash": "2b2a03a2c0ce52d30ecd",
+  "publicPath": "",
+  "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/dist/node",
+  "assetsByChunkName": {
+    "App": "App.1dfa5568d8e42343b813.js",
+    "Login": "Login.846558a375b5643cb3c2.js",
+    "NotFound": "NotFound.4c6b4174474b299e5941.js",
+    "main": "server.js"
+  },
+  "assets": [
+    {
+      "name": "App.1dfa5568d8e42343b813.js",
+      "size": 6458,
+      "chunks": [
+        "App"
+      ],
+      "chunkNames": [
+        "App"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "Login.846558a375b5643cb3c2.js",
+      "size": 2087,
+      "chunks": [
+        "Login"
+      ],
+      "chunkNames": [
+        "Login"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "NotFound.4c6b4174474b299e5941.js",
+      "size": 2096,
+      "chunks": [
+        "NotFound"
+      ],
+      "chunkNames": [
+        "NotFound"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "server.js",
+      "size": 41256,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "server.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "server.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "App": {
+      "chunks": [
+        "App"
+      ],
+      "assets": [
+        "App.1dfa5568d8e42343b813.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "Home": {
+      "chunks": [],
+      "assets": [],
+      "children": {},
+      "childAssets": {}
+    },
+    "Login": {
+      "chunks": [
+        "Login"
+      ],
+      "assets": [
+        "Login.846558a375b5643cb3c2.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "NotFound": {
+      "chunks": [
+        "NotFound"
+      ],
+      "assets": [
+        "NotFound.4c6b4174474b299e5941.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

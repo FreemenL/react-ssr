@@ -3,9 +3,6 @@
   declare module '*.jpg'
   declare module '@loadable/component'
 
-  declare let __webpack_modules__: any;
-  declare let __webpack_require__: any;
-
   declare module "*.css" {
     const content: {
       [propName: string]: any

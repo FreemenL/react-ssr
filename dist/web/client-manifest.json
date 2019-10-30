@@ -1,0 +1,179 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.41.2",
+  "hash": "7e7673abcfc26a3a8595",
+  "publicPath": "/web/",
+  "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/dist/web",
+  "assetsByChunkName": {
+    "App": "static/js/App_c81f3e7f.js",
+    "Login": "static/js/Login_b505b69d.js",
+    "NotFound": "static/js/NotFound_d915f9ab.js",
+    "main": "static/js/main_44b8e89f.js",
+    "manifest": "static/js/manifest_a95e5ea0.js",
+    "vendor~main": "static/js/vendor~main_1cd1b640.js"
+  },
+  "assets": [
+    {
+      "name": "static/js/App_c81f3e7f.js",
+      "size": 6496,
+      "chunks": [
+        "App"
+      ],
+      "chunkNames": [
+        "App"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "static/js/Login_b505b69d.js",
+      "size": 2226,
+      "chunks": [
+        "Login"
+      ],
+      "chunkNames": [
+        "Login"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "static/js/NotFound_d915f9ab.js",
+      "size": 2235,
+      "chunks": [
+        "NotFound"
+      ],
+      "chunkNames": [
+        "NotFound"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "static/js/main_44b8e89f.js",
+      "size": 23227,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "static/js/manifest_a95e5ea0.js",
+      "size": 9316,
+      "chunks": [
+        "manifest"
+      ],
+      "chunkNames": [
+        "manifest"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "static/js/vendor~main_1cd1b640.js",
+      "size": 1567148,
+      "chunks": [
+        "vendor~main"
+      ],
+      "chunkNames": [
+        "vendor~main"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "manifest",
+        "vendor~main",
+        "main"
+      ],
+      "assets": [
+        "static/js/manifest_a95e5ea0.js",
+        "static/js/vendor~main_1cd1b640.js",
+        "static/js/main_44b8e89f.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "manifest",
+        "vendor~main",
+        "main"
+      ],
+      "assets": [
+        "static/js/manifest_a95e5ea0.js",
+        "static/js/vendor~main_1cd1b640.js",
+        "static/js/main_44b8e89f.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "App": {
+      "chunks": [
+        "App"
+      ],
+      "assets": [
+        "static/js/App_c81f3e7f.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "Home": {
+      "chunks": [],
+      "assets": [],
+      "children": {},
+      "childAssets": {}
+    },
+    "Login": {
+      "chunks": [
+        "Login"
+      ],
+      "assets": [
+        "static/js/Login_b505b69d.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "NotFound": {
+      "chunks": [
+        "NotFound"
+      ],
+      "assets": [
+        "static/js/NotFound_d915f9ab.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
