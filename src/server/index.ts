@@ -1,19 +1,21 @@
+import path from 'path';
 import express from 'express';
-import { render } from './utils';
 import proxy from 'express-http-proxy';
-import { getStore } from '../store';
-import Routes from '../Routes';
 import { matchRoutes } from "react-router-config";
 
+import { render } from './utils';
+import { getStore } from '../store';
+import Routes from '../Routes';
+
 const app = express();
-app.use(express.static('dist'));
+
+app.use(express.static(path.resolve(process.cwd(),'dist')));
 
 app.use('/api', proxy('http://localhost:4000', {
   proxyReqPathResolver: function(req) {
     return '/api'+req.url
   }
 }));
-
 
 app.get("*", (req,res)=>{
 

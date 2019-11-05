@@ -8,7 +8,7 @@ module.exports = merge(baseConfig, {
   target: "node",
   mode: "development",
   entry: './src/server/index.ts',
-  externals: [nodeExternals()],
+  externals: ['@loadable/component',nodeExternals()],
   module: {
     rules: [{
       test: /\.(le|c)ss$/,
@@ -28,6 +28,11 @@ module.exports = merge(baseConfig, {
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist/node'),
     libraryTarget: 'commonjs2'
-  }
+  },
+  plugins: [ 
+    new LoadablePlugin({
+      filename: 'server-manifest.json',
+    })
+  ]
 })
 

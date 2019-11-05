@@ -1,10 +1,9 @@
 export const path = require("path");
 export const fs = require("fs");
-const webpack = require("webpack");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+export const webpack = require("webpack");
 export const LoadablePlugin = require('@loadable/webpack-plugin')
 
-const srcPath = path.resolve(__dirname,'./src')
+const srcPath = path.resolve(__dirname,'./src');
 
 module.exports = {
 
@@ -33,7 +32,8 @@ module.exports = {
             "server/**/*.{ts,tsx}"
           ],
           configFileName: path.resolve(fs.realpathSync(process.cwd()),'tsconfig.json')
-      }}]
+      }}],
+      exclude: /node_modules/
       },{
         test: /\.js$/,
         loader: 'babel-loader',
@@ -42,10 +42,7 @@ module.exports = {
   },
 
   plugins: [ 
-    new webpack.ProgressPlugin(),
-    new LoadablePlugin({
-      filename: `${process.env.PLATFORM}-manifest.json`,
-    })
+    new webpack.ProgressPlugin()
   ]
 
 }

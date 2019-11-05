@@ -2,19 +2,19 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.2",
-  "hash": "2b2a03a2c0ce52d30ecd",
+  "hash": "f065cce01f927b57abba",
   "publicPath": "",
   "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/dist/node",
   "assetsByChunkName": {
-    "App": "App.1dfa5568d8e42343b813.js",
+    "App": "App.22308301cc09916375f5.js",
     "Login": "Login.846558a375b5643cb3c2.js",
     "NotFound": "NotFound.4c6b4174474b299e5941.js",
     "main": "server.js"
   },
   "assets": [
     {
-      "name": "App.1dfa5568d8e42343b813.js",
-      "size": 6458,
+      "name": "App.22308301cc09916375f5.js",
+      "size": 6460,
       "chunks": [
         "App"
       ],
@@ -56,7 +56,7 @@
     },
     {
       "name": "server.js",
-      "size": 41256,
+      "size": 41376,
       "chunks": [
         "main"
       ],
@@ -96,7 +96,7 @@
         "App"
       ],
       "assets": [
-        "App.1dfa5568d8e42343b813.js"
+        "App.22308301cc09916375f5.js"
       ],
       "children": {},
       "childAssets": {}

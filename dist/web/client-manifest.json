@@ -2,21 +2,21 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.2",
-  "hash": "7e7673abcfc26a3a8595",
+  "hash": "67f8b4d852b4e7875454",
   "publicPath": "/web/",
   "outputPath": "/Users/jiayali/Desktop/react-ssr-f/react-ssr/dist/web",
   "assetsByChunkName": {
-    "App": "static/js/App_c81f3e7f.js",
+    "App": "static/js/App_e3e0ed7a.js",
     "Login": "static/js/Login_b505b69d.js",
     "NotFound": "static/js/NotFound_d915f9ab.js",
     "main": "static/js/main_44b8e89f.js",
-    "manifest": "static/js/manifest_a95e5ea0.js",
+    "manifest": "static/js/manifest_be8c6206.js",
     "vendor~main": "static/js/vendor~main_1cd1b640.js"
   },
   "assets": [
     {
-      "name": "static/js/App_c81f3e7f.js",
-      "size": 6496,
+      "name": "static/js/App_e3e0ed7a.js",
+      "size": 6498,
       "chunks": [
         "App"
       ],
@@ -71,7 +71,7 @@
       "emitted": false
     },
     {
-      "name": "static/js/manifest_a95e5ea0.js",
+      "name": "static/js/manifest_be8c6206.js",
       "size": 9316,
       "chunks": [
         "manifest"
@@ -108,7 +108,7 @@
         "main"
       ],
       "assets": [
-        "static/js/manifest_a95e5ea0.js",
+        "static/js/manifest_be8c6206.js",
         "static/js/vendor~main_1cd1b640.js",
         "static/js/main_44b8e89f.js"
       ],
@@ -124,7 +124,7 @@
         "main"
       ],
       "assets": [
-        "static/js/manifest_a95e5ea0.js",
+        "static/js/manifest_be8c6206.js",
         "static/js/vendor~main_1cd1b640.js",
         "static/js/main_44b8e89f.js"
       ],
@@ -136,7 +136,7 @@
         "App"
       ],
       "assets": [
-        "static/js/App_c81f3e7f.js"
+        "static/js/App_e3e0ed7a.js"
       ],
       "children": {},
       "childAssets": {}

@@ -7,7 +7,7 @@ export default WithStyle(class Header extends PureComponent{
   render() {
     return (
       <div className={styles.test}>
-        <Link to='/'>home</Link>
+        <Link to='/'>render</Link>
         <br/>
         <Link to='/login'>login</Link>
       </div>
