@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"App":"App","Login":"Login","NotFound":"NotFound"}[chunkId]||chunkId) + "." + {"App":"22308301cc09916375f5","Login":"846558a375b5643cb3c2","NotFound":"4c6b4174474b299e5941"}[chunkId] + ".js");
+/******/ 			var chunk = require("./" + ({"App":"App","Login":"Login","NotFound":"NotFound"}[chunkId]||chunkId) + "." + {"App":"612e78c9b2c5209c5bc2","Login":"846558a375b5643cb3c2","NotFound":"4c6b4174474b299e5941"}[chunkId] + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -270,7 +270,7 @@ eval("\n    var refs = 0;\n    var css = __webpack_require__(/*! !../../../node_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _path = _interopRequireDefault(__webpack_require__(/*! path */ \"path\"));\n\nvar _express = _interopRequireDefault(__webpack_require__(/*! express */ \"express\"));\n\nvar _expressHttpProxy = _interopRequireDefault(__webpack_require__(/*! express-http-proxy */ \"express-http-proxy\"));\n\nvar _reactRouterConfig = __webpack_require__(/*! react-router-config */ \"react-router-config\");\n\nvar _utils = __webpack_require__(/*! ./utils */ \"./src/server/utils.tsx\");\n\nvar _store = __webpack_require__(/*! ../store */ \"./src/store/index.ts\");\n\nvar _Routes = _interopRequireDefault(__webpack_require__(/*! ../Routes */ \"./src/Routes.js\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express.default)();\napp.use(_express.default.static(_path.default.resolve(process.cwd(), 'dist')));\napp.use('/api', (0, _expressHttpProxy.default)('http://localhost:4000', {\n  proxyReqPathResolver: function proxyReqPathResolver(req) {\n    return '/api' + req.url;\n  }\n}));\napp.get(\"*\", function (req, res) {\n  var store = (0, _store.getStore)();\n  var matchedRoutes = (0, _reactRouterConfig.matchRoutes)(_Routes.default, req.path);\n  var promises = [];\n  matchedRoutes.forEach(function (item) {\n    if (item.route.loadData) {\n      var promise = new Promise(function (resolve, reject) {\n        item.route.loadData(store).then(resolve).catch(resolve);\n      });\n      promises.push(promise);\n    }\n  });\n  Promise.all(promises).then(function () {\n    var context = {\n      css: []\n    };\n    var html = (0, _utils.render)(store, _Routes.default, req, context);\n\n    if (context.NotFound) {\n      res.status(404);\n      res.send(html);\n    } else {\n      res.send(html);\n    }\n  });\n});\napp.listen(3000, function () {\n  console.log('server qstart at http://localhost:3000');\n});\n\n//# sourceURL=webpack:///./src/server/index.ts?");
+eval("\n\nvar _path = _interopRequireDefault(__webpack_require__(/*! path */ \"path\"));\n\nvar _express = _interopRequireDefault(__webpack_require__(/*! express */ \"express\"));\n\nvar _expressHttpProxy = _interopRequireDefault(__webpack_require__(/*! express-http-proxy */ \"express-http-proxy\"));\n\nvar _browserSync = _interopRequireDefault(__webpack_require__(/*! browser-sync */ \"browser-sync\"));\n\nvar _reactRouterConfig = __webpack_require__(/*! react-router-config */ \"react-router-config\");\n\nvar _utils = __webpack_require__(/*! ./utils */ \"./src/server/utils.tsx\");\n\nvar _store = __webpack_require__(/*! ../store */ \"./src/store/index.ts\");\n\nvar _Routes = _interopRequireDefault(__webpack_require__(/*! ../Routes */ \"./src/Routes.js\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar bs = _browserSync.default.create();\n\nvar app = (0, _express.default)();\napp.use(_express.default.static(_path.default.resolve(process.cwd(), 'dist')));\napp.use('/api', (0, _expressHttpProxy.default)('http://localhost:4000', {\n  proxyReqPathResolver: function proxyReqPathResolver(req) {\n    return '/api' + req.url;\n  }\n}));\napp.get(\"*\", function (req, res) {\n  var store = (0, _store.getStore)();\n  var matchedRoutes = (0, _reactRouterConfig.matchRoutes)(_Routes.default, req.path);\n  var promises = [];\n  matchedRoutes.forEach(function (item) {\n    if (item.route.loadData) {\n      var promise = new Promise(function (resolve, reject) {\n        item.route.loadData(store).then(resolve).catch(resolve);\n      });\n      promises.push(promise);\n    }\n  });\n  Promise.all(promises).then(function () {\n    var context = {\n      css: []\n    };\n    var html = (0, _utils.render)(store, _Routes.default, req, context);\n\n    if (context.NotFound) {\n      res.status(404);\n      res.send(html);\n    } else {\n      res.send(html);\n    }\n  });\n});\napp.listen(3000, function () {\n  bs.init({\n    open: true,\n    ui: false,\n    notify: true,\n    files: ['./**'],\n    port: 3000\n  });\n  console.log('server qstart at http://localhost:3000');\n});\n\n//# sourceURL=webpack:///./src/server/index.ts?");
 
 /***/ }),
 
@@ -340,6 +340,17 @@ eval("module.exports = require(\"@loadable/server\");\n\n//# sourceURL=webpack:/
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"axios\");\n\n//# sourceURL=webpack:///external_%22axios%22?");
+
+/***/ }),
+
+/***/ "browser-sync":
+/*!*******************************!*\
+  !*** external "browser-sync" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"browser-sync\");\n\n//# sourceURL=webpack:///external_%22browser-sync%22?");
 
 /***/ }),
 

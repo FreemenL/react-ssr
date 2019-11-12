@@ -2,14 +2,15 @@ export const  webpack = require("webpack")
 const { run } = require('runjs');
 const WebpackClientConfig  = require('./webpack.client.config');
 const WebpackServerConfig  = require('./webpack.server.config');
+const chalk  = require('chalk');
 var cp = require('child_process');
 
-
+let count = 0;
 //异步流
 class AsyncHook{
   hooks:Array<any>
   constructor(){
-      this.hooks = [];
+    this.hooks = [];
   }
   /**
    * 订阅
@@ -43,16 +44,14 @@ class AsyncHook{
 
 const queue = new AsyncHook;
 
-
-
 queue.tapAsync("delDev", (tag, task, result, next) => {
   webpack(WebpackClientConfig).watch({
-    aggregateTimeout: 300
+    aggregateTimeout: 300,
+    ignored: /node_modules/
   }, (err: Error) => {
     if(!err){
-      next('success')
+      next()
     }
-    next('error')
   })
 })
 
@@ -61,17 +60,27 @@ queue.tapAsync("delDev", (tag, task, result, next) => {
 */
 queue.tapAsync("start building...", (tag, task, result, next) => {
   webpack(WebpackServerConfig).watch({
-    aggregateTimeout: 300
+    aggregateTimeout: 300,
+    ignored: /node_modules/
   }, (err: Error) => {
     if(!err){
-      /* 如果不是开启子进程的方式 执行的话  webpack的watch 会失效*/
-      cp.spawn('node', ['./dist/node/server.js'])
-      next('1success')
+      next()
     }
-    next('1error')
   })
 })
 
 queue.callAsync("build", (task,result) => {
+  if(!count){
+    count++
+    cp.spawn('nodemon', ['--watch', 'dist/**/*', './dist/node/server.js'], {
+      // detached: true, //保证父进程结束，子进程仍然可以运行
+      stdio: 'inherit',
+      cwd: process.cwd()
+    })
+  }
   console.log(result)
+});
+
+queue.callAsync("build", (task,result) => {
+  process.stdout.write(chalk.green(`server start at http://localhost:3000`));
 });
